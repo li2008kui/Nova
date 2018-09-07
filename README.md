@@ -1,2 +1,2 @@
 # Nova
-Nova is a microservices framework based on .net Core.
+Nova is a sample of microservice and container based .net core application.
