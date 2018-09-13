@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  nova.services.ids4:
+    image: ${DOCKER_REGISTRY}novaservicesids4
+    ports:
+      - "9500:80"
+    build:
+      context: .
+      dockerfile: Nova.Services.Ids4/Dockerfile
+    environment:
+      IDS4_URL: "http://192.168.1.170:9500"
+      CONSUL_URL: "http://192.168.1.170:8500"
+      DATACENTER: dc1
