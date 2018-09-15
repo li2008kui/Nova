@@ -9,6 +9,19 @@ services:
       context: .
       dockerfile: Nova.Services.Ids4/Dockerfile
     environment:
-      IDS4_URL: "http://192.168.1.170:9500"
+      SERVICE_URL: "http://192.168.1.170:9500"
+      CONSUL_URL: "http://192.168.1.170:8500"
+      DATACENTER: dc1
+
+  nova.services.account:
+    image: ${DOCKER_REGISTRY}novaservicesaccount
+    ports:
+      - "8800:80"
+    build:
+      context: .
+      dockerfile: Nova.Services.Account/Dockerfile
+    environment:
+      AUTH_URL: "http://192.168.1.170:9500/connect/token"
+      SERVICE_URL: "http://192.168.1.170:8800"
       CONSUL_URL: "http://192.168.1.170:8500"
       DATACENTER: dc1

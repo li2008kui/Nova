@@ -5,6 +5,7 @@ EXPOSE 80
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
 COPY Nova.Services.Ids4/Nova.Services.Ids4.csproj Nova.Services.Ids4/
+COPY Nova.Utilities.Consul/Nova.Utilities.Consul.csproj Nova.Utilities.Consul/
 RUN dotnet restore Nova.Services.Ids4/Nova.Services.Ids4.csproj
 COPY . .
 WORKDIR /src/Nova.Services.Ids4

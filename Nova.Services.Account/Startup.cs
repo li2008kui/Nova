@@ -1,14 +1,11 @@
-﻿using IdentityServer4.Models;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nova.Utilities.Consul;
-using System;
-using System.Collections.Generic;
 
-namespace Nova.Services.Ids4
+namespace Nova.Services.Account
 {
     public class Startup
     {
@@ -20,22 +17,9 @@ namespace Nova.Services.Ids4
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            string ids4Url = Environment.GetEnvironmentVariable("IDS4_URL");
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddIdentityServer(o => o.IssuerUri = ids4Url)
-                .AddDeveloperSigningCredential()
-                .AddInMemoryIdentityResources(new List<IdentityResource>
-                {
-                    new IdentityResources.OpenId(),
-                    new IdentityResources.Profile()
-                })
-                .AddInMemoryApiResources(Config.GetApiResources())
-                .AddInMemoryClients(Config.GetClients())
-                .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
-                .AddProfileService<ProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,8 +31,7 @@ namespace Nova.Services.Ids4
             }
 
             app.UseMvc();
-            app.UseIdentityServer();
-            ConsulUtility.ConsulService("Nova-Services-Ids4", lifetime);
+            ConsulUtility.ConsulService("Nova-Services-Account", lifetime);
         }
     }
 }

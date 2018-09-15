@@ -18,7 +18,7 @@ namespace Nova.Services.Ids4
                         authenticationMethod: "custom",
                         claims: new Claim[] {
                             new Claim("Name", context.UserName),
-                            new Claim("Email", "123@qq.com")
+                            new Claim("Email", "admin@thiscoder.com")
                         });
                 }
                 else

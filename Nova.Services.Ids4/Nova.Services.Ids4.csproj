@@ -11,11 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Consul" Version="0.7.2.6" />
     <PackageReference Include="IdentityServer4" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1985401" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nova.Utilities.Consul\Nova.Utilities.Consul.csproj" />
   </ItemGroup>
 
 </Project>
