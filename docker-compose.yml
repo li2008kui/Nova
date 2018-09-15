@@ -9,6 +9,7 @@ services:
       context: .
       dockerfile: Nova.Services.Ids4/Dockerfile
     environment:
+      ISSUER_URI: "http://192.168.1.170:9500"
       SERVICE_URL: "http://192.168.1.170:9500"
       CONSUL_URL: "http://192.168.1.170:8500"
       DATACENTER: dc1
@@ -23,5 +24,18 @@ services:
     environment:
       AUTH_URL: "http://192.168.1.170:9500/connect/token"
       SERVICE_URL: "http://192.168.1.170:8800"
+      CONSUL_URL: "http://192.168.1.170:8500"
+      DATACENTER: dc1
+
+  nova.services.ticket.api:
+    image: ${DOCKER_REGISTRY}novaservicesticketapi
+    ports:
+      - "9900:80"
+    build:
+      context: .
+      dockerfile: Nova.Services.Ticket.API/Dockerfile
+    environment:
+      AUTH_BASE_ADDRESS: "http://192.168.1.170:9500"
+      SERVICE_URL: "http://192.168.1.170:9900"
       CONSUL_URL: "http://192.168.1.170:8500"
       DATACENTER: dc1

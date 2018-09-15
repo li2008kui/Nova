@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova.Utilities.Consul", "Nova.Utilities.Consul\Nova.Utilities.Consul.csproj", "{EAD2FECF-DF4B-4BA7-BDFD-A8133A25938F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket", "Ticket", "{CEFAE595-507D-42B7-B0FB-B2169E4B508E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova.Services.Ticket.API", "Nova.Services.Ticket.API\Nova.Services.Ticket.API.csproj", "{4DF73B7A-3CF0-431D-AE1E-8B2C9D08A7FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{EAD2FECF-DF4B-4BA7-BDFD-A8133A25938F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAD2FECF-DF4B-4BA7-BDFD-A8133A25938F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAD2FECF-DF4B-4BA7-BDFD-A8133A25938F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF73B7A-3CF0-431D-AE1E-8B2C9D08A7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF73B7A-3CF0-431D-AE1E-8B2C9D08A7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF73B7A-3CF0-431D-AE1E-8B2C9D08A7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF73B7A-3CF0-431D-AE1E-8B2C9D08A7FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +82,8 @@ Global
 		{8B9EDD52-055B-41AB-BB86-518369BF0018} = {1271AFEC-EC4E-4945-AAF9-A2F994C35B96}
 		{8C3E4639-BE30-45DD-8462-DFD8B9498EC7} = {33BDF6F3-8AC0-419B-A98A-A17326574A73}
 		{EAD2FECF-DF4B-4BA7-BDFD-A8133A25938F} = {8C3E4639-BE30-45DD-8462-DFD8B9498EC7}
+		{CEFAE595-507D-42B7-B0FB-B2169E4B508E} = {90722875-4B10-462C-B36A-8F1F80C45361}
+		{4DF73B7A-3CF0-431D-AE1E-8B2C9D08A7FA} = {CEFAE595-507D-42B7-B0FB-B2169E4B508E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {678D8B79-7CB1-4C4E-A24E-0224832ECA95}
