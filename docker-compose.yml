@@ -39,3 +39,13 @@ services:
       SERVICE_URL: "http://192.168.1.170:9900"
       CONSUL_URL: "http://192.168.1.170:8500"
       DATACENTER: dc1
+
+  nova.apigateways.ocelot:
+    image: ${DOCKER_REGISTRY}novaapigatewaysocelot
+    ports:
+      - "1234:80"
+    build:
+      context: .
+      dockerfile: Nova.ApiGateways.Ocelot/Dockerfile
+    environment:
+      AUTH_BASE_ADDRESS: "http://192.168.1.170:9500"

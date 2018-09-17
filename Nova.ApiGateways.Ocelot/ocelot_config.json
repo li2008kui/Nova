@@ -1,0 +1,47 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/connect/token",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/connect/token",
+      "UpstreamHttpMethod": [ "Post" ],
+      "ServiceName": "Nova-Services-Ids4",
+      "LoadBalancerOptions": {
+        "type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true
+    },
+    {
+      "DownstreamPathTemplate": "/api/login",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/login",
+      "UpstreamHttpMethod": [ "Post" ],
+      "ServiceName": "Nova-Services-Account",
+      "LoadBalancerOptions": {
+        "type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true
+    },
+    {
+      "DownstreamPathTemplate": "/api/{uri}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/{uri}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ],
+      "ServiceName": "Nova-Services-Ticket-API",
+      "LoadBalancerOptions": {
+        "type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TicketKey",
+        "AllowedScopes": []
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "192.168.1.170",
+      "Port": 8500
+    }
+  }
+}

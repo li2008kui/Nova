@@ -9,7 +9,7 @@ namespace Nova.Services.Ids4
         internal static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource> {
-                new ApiResource("TestApi", "测试接口")
+                new ApiResource("Ticket.API", "票务接口")
             };
         }
 
@@ -27,7 +27,7 @@ namespace Nova.Services.Ids4
                     },
                     AllowedScopes =
                     {
-                        "TestApi",
+                        "Ticket.API",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile
                     }
