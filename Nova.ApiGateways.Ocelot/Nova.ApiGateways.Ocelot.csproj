@@ -14,7 +14,8 @@
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1985401" />
-    <PackageReference Include="Ocelot" Version="8.0.0" />
+    <PackageReference Include="Ocelot" Version="11.0.3" />
+    <PackageReference Include="Ocelot.Provider.Consul" Version="0.1.2" />
   </ItemGroup>
 
   <ItemGroup>

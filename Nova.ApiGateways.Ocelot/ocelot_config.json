@@ -41,7 +41,8 @@
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
       "Host": "192.168.1.170",
-      "Port": 8500
+      "Port": 8500,
+      "Type": "Consul"
     }
   }
 }

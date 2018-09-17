@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
 using System;
 
 namespace Nova.ApiGateways.Ocelot
@@ -36,7 +37,8 @@ namespace Nova.ApiGateways.Ocelot
                     o.SupportedTokens = SupportedTokens.Both;
                     o.JwtValidationClockSkew = TimeSpan.FromSeconds(1000);//Token过期时间偏移
                 });
-            services.AddOcelot(Configuration);
+            services.AddOcelot(Configuration)
+                .AddConsul();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
