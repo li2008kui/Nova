@@ -1,6 +1,13 @@
 version: '3.4'
 
 services:
+  sql.data:
+    image: mysql
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "your_password"
+
   nova.services.ids4:
     image: ${DOCKER_REGISTRY}novaservicesids4
     ports:
@@ -26,6 +33,8 @@ services:
       SERVICE_URL: "http://192.168.1.170:8800"
       CONSUL_URL: "http://192.168.1.170:8500"
       DATACENTER: dc1
+    depends_on:
+      - sql.data
 
   nova.services.ticket.api:
     image: ${DOCKER_REGISTRY}novaservicesticketapi

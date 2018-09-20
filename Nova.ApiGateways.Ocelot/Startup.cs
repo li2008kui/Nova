@@ -32,7 +32,7 @@ namespace Nova.ApiGateways.Ocelot
                 {
                     o.Authority = authBaseAddress;
                     o.ApiName = "Ticket.API";
-                    o.ApiSecret = "xxx";
+                    //o.ApiSecret = "xxx";
                     o.RequireHttpsMetadata = false;
                     o.SupportedTokens = SupportedTokens.Both;
                     o.JwtValidationClockSkew = TimeSpan.FromSeconds(1000);//Token过期时间偏移
